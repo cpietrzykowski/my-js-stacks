@@ -1,0 +1,508 @@
+{
+  "registry": {
+    "url": "https://registry.npmjs.org/"
+  },
+  "managers": [{
+    "name": "npm",
+    "command": "npm install",
+    "options": [{
+      "type": "development",
+      "option": "--save-dev"
+    }, {
+      "type": "production",
+      "option": ""
+    }],
+    "command_template": "[command] [packages] [options]",
+    "url": "https://www.npmjs.com/"
+  }, {
+    "name": "yarn",
+    "command": "yarn add",
+    "options": [{
+      "type": "development",
+      "option": "--dev"
+    }, {
+      "type": "production",
+      "option": ""
+    }],
+    "command_template": "[command] [packages] [options]",
+    "url": "https://yarnpkg.com/"
+  }],
+  "types": [{
+    "name": "client",
+    "description": "Frequently used packages for front end development and design. Client packages should be added as a development dependency if using a bundler."
+  }, {
+    "name": "database",
+    "description": "Data storage packages."
+  }, {
+    "name": "linter",
+    "description": "Helpful development source tools."
+  }, {
+    "name": "server",
+    "description": "Server/node and database packages."
+  }, {
+    "name": "shared",
+    "description": "These are common packages to both client/front end/server and library js development."
+  }, {
+    "name": "transpiler",
+    "description": "More than a parser, not quite a compiler."
+  }],
+  "packages": [{
+    "name": "autoprefixer",
+    "type": "client",
+    "dependencies": ["postcss-loader"],
+    "development": true,
+    "details": {
+      "description": "Parse CSS and add vendor prefixes to CSS rules using values from the Can I Use website",
+      "homepage": "https://github.com/postcss/autoprefixer#readme",
+      "latest": "7.1.1",
+      "license": "MIT",
+      "keywords": ["autoprefixer", "css", "prefix", "postcss", "postcss-plugin"]
+    }
+  }, {
+    "name": "babel-cli",
+    "type": "transpiler",
+    "dependencies": [],
+    "development": true,
+    "details": {
+      "description": "Babel command line.",
+      "homepage": "https://babeljs.io/",
+      "latest": "6.24.1",
+      "license": "MIT",
+      "keywords": ["6to5", "babel", "es6", "transpile", "transpiler", "babel-cli", "compiler"]
+    }
+  }, {
+    "name": "babel-core",
+    "type": "transpiler",
+    "dependencies": [],
+    "development": true,
+    "details": {
+      "description": "Babel compiler core.",
+      "homepage": "https://babeljs.io/",
+      "latest": "6.25.0",
+      "license": "MIT",
+      "keywords": ["6to5", "babel", "classes", "const", "es6", "harmony", "let", "modules", "transpile", "transpiler", "var", "babel-core", "compiler"]
+    }
+  }, {
+    "name": "babel-eslint",
+    "type": "linter",
+    "dependencies": ["eslint", "babel-core"],
+    "development": true,
+    "details": {
+      "description": "Custom parser for ESLint",
+      "homepage": "https://github.com/babel/babel-eslint",
+      "latest": "7.2.3",
+      "license": "MIT",
+      "keywords": []
+    }
+  }, {
+    "name": "babel-loader",
+    "type": "client",
+    "dependencies": ["webpack", "babel-core"],
+    "development": true,
+    "details": {
+      "description": "babel module loader for webpack",
+      "homepage": "https://github.com/babel/babel-loader",
+      "latest": "7.0.0",
+      "license": "MIT",
+      "keywords": ["webpack", "loader", "babel", "es6", "transpiler", "module"]
+    }
+  }, {
+    "name": "babel-preset-env",
+    "type": "client",
+    "dependencies": ["babel-core"],
+    "development": true,
+    "details": {
+      "description": "A Babel preset for each environment.",
+      "homepage": "https://babeljs.io/",
+      "latest": "1.5.2",
+      "license": "MIT",
+      "keywords": []
+    }
+  }, {
+    "name": "babel-preset-flow",
+    "type": "shared",
+    "dependencies": ["babel-core"],
+    "development": true,
+    "details": {
+      "description": "Babel preset for all Flow plugins.",
+      "homepage": "",
+      "latest": "6.23.0",
+      "license": "MIT",
+      "keywords": ["babel-preset", "flowtype", "flow", "types"]
+    }
+  }, {
+    "name": "babel-preset-react",
+    "type": "client",
+    "dependencies": ["babel-core", "react"],
+    "development": true,
+    "details": {
+      "description": "Babel preset for all React plugins.",
+      "homepage": "https://babeljs.io/",
+      "latest": "6.24.1",
+      "license": "MIT",
+      "keywords": []
+    }
+  }, {
+    "name": "babel-preset-stage-1",
+    "type": "shared",
+    "dependencies": ["babel-core"],
+    "development": true,
+    "details": {
+      "description": "Babel preset for stage 1 plugins",
+      "homepage": "https://babeljs.io/",
+      "latest": "6.24.1",
+      "license": "MIT",
+      "keywords": []
+    }
+  }, {
+    "name": "body-parser",
+    "type": "server",
+    "dependencies": ["express"],
+    "development": false,
+    "details": {
+      "description": "Node.js body parsing middleware",
+      "homepage": "https://github.com/expressjs/body-parser#readme",
+      "latest": "1.17.2",
+      "license": "MIT",
+      "keywords": []
+    }
+  }, {
+    "name": "bootstrap",
+    "type": "client",
+    "notes": "requires tether.io for tooltips (optional)",
+    "dependencies": [],
+    "development": true,
+    "details": {
+      "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+      "homepage": "http://getbootstrap.com",
+      "latest": "3.3.7",
+      "license": "MIT",
+      "keywords": ["css", "less", "mobile-first", "responsive", "front-end", "framework", "web"]
+    }
+  }, {
+    "name": "cookie-parser",
+    "type": "server",
+    "dependencies": ["express"],
+    "development": false,
+    "details": {
+      "description": "cookie parsing with signatures",
+      "homepage": "https://github.com/expressjs/cookie-parser",
+      "latest": "1.4.3",
+      "license": "MIT",
+      "keywords": ["cookie", "middleware"]
+    }
+  }, {
+    "name": "css-loader",
+    "type": "client",
+    "dependencies": ["webpack"],
+    "development": true,
+    "details": {
+      "description": "css loader module for webpack",
+      "homepage": "https://github.com/webpack/css-loader#readme",
+      "latest": "0.28.4",
+      "license": "MIT",
+      "keywords": []
+    }
+  }, {
+    "name": "cssnano",
+    "type": "client",
+    "dependencies": ["postcss-loader"],
+    "development": true,
+    "details": {
+      "description": "A modular minifier, built on top of the PostCSS ecosystem.",
+      "homepage": "https://github.com/ben-eb/cssnano",
+      "latest": "3.10.0",
+      "license": "MIT",
+      "keywords": ["css", "compress", "minify", "optimise", "optimisation", "postcss", "postcss-plugin"]
+    }
+  }, {
+    "name": "debug",
+    "type": "server",
+    "dependencies": [],
+    "development": false,
+    "details": {
+      "description": "small debugging utility",
+      "homepage": "https://github.com/visionmedia/debug#readme",
+      "latest": "2.6.8",
+      "license": "MIT",
+      "keywords": ["debug", "log", "debugger"]
+    }
+  }, {
+    "name": "eslint",
+    "type": "linter",
+    "dependencies": [],
+    "development": true,
+    "details": {
+      "description": "An AST-based pattern checker for JavaScript.",
+      "homepage": "http://eslint.org",
+      "latest": "3.19.0",
+      "license": "MIT",
+      "keywords": ["ast", "lint", "javascript", "ecmascript", "espree"]
+    }
+  }, {
+    "name": "eslint-config-google",
+    "type": "linter",
+    "dependencies": ["eslint"],
+    "development": true,
+    "details": {
+      "description": "ESLint shareable config for the Google style",
+      "homepage": "https://github.com/google/eslint-config-google#readme",
+      "latest": "0.8.0",
+      "license": "Apache-2.0",
+      "keywords": ["google", "code", "quality", "style", "lint", "linter", "jscs", "jshint", "jslint", "eslint", "validate", "code style", "strict", "check", "checker", "verify", "enforce", "hint"]
+    }
+  }, {
+    "name": "eslint-plugin-flowtype",
+    "type": "linter",
+    "dependencies": ["eslint"],
+    "development": true,
+    "details": {
+      "description": "Flowtype linting rules for ESLint.",
+      "homepage": "https://github.com/gajus/eslint-plugin-flowtype#readme",
+      "latest": "2.34.0",
+      "license": "BSD-3-Clause",
+      "keywords": ["eslint", "plugin", "flowtype"]
+    }
+  }, {
+    "name": "eslint-plugin-react",
+    "type": "linter",
+    "dependencies": ["eslint", "react"],
+    "development": true,
+    "details": {
+      "description": "React specific linting rules for ESLint",
+      "homepage": "https://github.com/yannickcr/eslint-plugin-react",
+      "latest": "7.0.1",
+      "license": "MIT",
+      "keywords": ["eslint", "eslint-plugin", "eslintplugin", "react"]
+    }
+  }, {
+    "name": "express",
+    "type": "server",
+    "dependencies": [],
+    "development": false,
+    "details": {
+      "description": "Fast, unopinionated, minimalist web framework",
+      "homepage": "http://expressjs.com/",
+      "latest": "4.15.3",
+      "license": "MIT",
+      "keywords": ["express", "framework", "sinatra", "web", "rest", "restful", "router", "app", "api"]
+    }
+  }, {
+    "name": "extract-text-webpack-plugin",
+    "type": "client",
+    "dependencies": ["webpack"],
+    "development": true,
+    "details": {
+      "description": "Extract text from bundle into a file.",
+      "homepage": "http://github.com/webpack-contrib/extract-text-webpack-plugin",
+      "latest": "2.1.2",
+      "license": "MIT",
+      "keywords": []
+    }
+  }, {
+    "name": "flow-bin",
+    "type": "shared",
+    "dependencies": [],
+    "development": true,
+    "details": {
+      "description": "Binary wrapper for Flow - A static type checker for JavaScript",
+      "homepage": "https://github.com/flowtype/flow-bin#readme",
+      "latest": "0.47.0",
+      "license": "BSD-3-Clause",
+      "keywords": ["cli-app", "cli", "bin", "binary", "flow", "facebook", "type", "inference", "check", "checker", "javascript", "js", "wrapper"]
+    }
+  }, {
+    "name": "immutable",
+    "type": "shared",
+    "dependencies": [],
+    "development": true,
+    "details": {
+      "description": "Immutable Data Collections",
+      "homepage": "https://facebook.github.com/immutable-js",
+      "latest": "3.8.1",
+      "license": "BSD-3-Clause",
+      "keywords": ["immutable", "persistent", "lazy", "data", "datastructure", "functional", "collection", "stateless", "sequence", "iteration"]
+    }
+  }, {
+    "name": "jest",
+    "type": "shared",
+    "dependencies": [],
+    "development": true,
+    "details": {
+      "description": "Delightful JavaScript Testing.",
+      "homepage": "http://facebook.github.io/jest/",
+      "latest": "20.0.4",
+      "license": "BSD-3-Clause",
+      "keywords": ["ava", "babel", "coverage", "easy", "expect", "facebook", "immersive", "instant", "jasmine", "jest", "jsdom", "mocha", "mocking", "painless", "qunit", "runner", "sandboxed", "snapshot", "tap", "tape", "test", "testing", "typescript", "watch"]
+    }
+  }, {
+    "name": "jquery",
+    "type": "client",
+    "dependencies": [],
+    "development": true,
+    "details": {
+      "description": "JavaScript library for DOM operations",
+      "homepage": "https://jquery.com",
+      "latest": "3.2.1",
+      "license": "MIT",
+      "keywords": ["jquery", "javascript", "browser", "library"]
+    }
+  }, {
+    "name": "jsdoc",
+    "type": "shared",
+    "dependencies": [],
+    "development": true,
+    "details": {
+      "description": "An API documentation generator for JavaScript.",
+      "homepage": "https://github.com/jsdoc3/jsdoc#readme",
+      "latest": "3.4.3",
+      "license": "Apache-2.0",
+      "keywords": ["documentation", "javascript"]
+    }
+  }, {
+    "name": "mongodb",
+    "type": "database",
+    "dependencies": [],
+    "development": false,
+    "details": {
+      "description": "The official MongoDB driver for Node.js",
+      "homepage": "https://github.com/mongodb/node-mongodb-native",
+      "latest": "2.2.28",
+      "license": "Apache-2.0",
+      "keywords": ["mongodb", "driver", "official"]
+    }
+  }, {
+    "name": "morgan",
+    "type": "server",
+    "dependencies": [],
+    "development": false,
+    "details": {
+      "description": "HTTP request logger middleware for node.js",
+      "homepage": "https://github.com/expressjs/morgan#readme",
+      "latest": "1.8.2",
+      "license": "MIT",
+      "keywords": ["express", "http", "logger", "middleware"]
+    }
+  }, {
+    "name": "node-sass",
+    "type": "client",
+    "dependencies": ["sass-loader"],
+    "development": true,
+    "details": {
+      "description": "Wrapper around libsass",
+      "homepage": "https://github.com/sass/node-sass",
+      "latest": "4.5.3",
+      "license": "MIT",
+      "keywords": ["css", "libsass", "preprocessor", "sass", "scss", "style"]
+    }
+  }, {
+    "name": "nodemon",
+    "type": "server",
+    "dependencies": [],
+    "development": true,
+    "details": {
+      "description": "Simple monitor script for use during development of a node.js app.",
+      "homepage": "http://nodemon.io",
+      "latest": "1.11.0",
+      "license": "MIT",
+      "keywords": ["monitor", "development", "restart", "autoload", "reload", "terminal"]
+    }
+  }, {
+    "name": "pg",
+    "type": "database",
+    "dependencies": [],
+    "development": false,
+    "details": {
+      "description": "PostgreSQL client - pure javascript & libpq with the same API",
+      "homepage": "http://github.com/brianc/node-postgres",
+      "latest": "6.2.4",
+      "license": "MIT",
+      "keywords": ["postgres", "pg", "libpq", "postgre", "database", "rdbms"]
+    }
+  }, {
+    "name": "postcss-loader",
+    "type": "client",
+    "dependencies": ["webpack"],
+    "development": true,
+    "details": {
+      "description": "PostCSS loader for webpack",
+      "homepage": "https://github.com/postcss/postcss-loader#readme",
+      "latest": "2.0.5",
+      "license": "MIT",
+      "keywords": ["css", "postcss", "postcss-runner", "webpack", "webpack-loader"]
+    }
+  }, {
+    "name": "react",
+    "type": "client",
+    "dependencies": ["react-dom"],
+    "development": true,
+    "details": {
+      "description": "React is a JavaScript library for building user interfaces.",
+      "homepage": "https://facebook.github.io/react/",
+      "latest": "15.5.4",
+      "license": "BSD-3-Clause",
+      "keywords": ["react"]
+    }
+  }, {
+    "name": "react-dom",
+    "type": "client",
+    "dependencies": ["react"],
+    "development": true,
+    "details": {
+      "description": "React package for working with the DOM.",
+      "homepage": "https://facebook.github.io/react/",
+      "latest": "15.5.4",
+      "license": "BSD-3-Clause",
+      "keywords": ["react"]
+    }
+  }, {
+    "name": "sass-loader",
+    "type": "client",
+    "dependencies": ["webpack", "node-sass"],
+    "development": true,
+    "details": {
+      "description": "Sass loader for webpack",
+      "homepage": "https://github.com/webpack-contrib/sass-loader#readme",
+      "latest": "6.0.5",
+      "license": "MIT",
+      "keywords": ["sass", "libsass", "webpack", "loader"]
+    }
+  }, {
+    "name": "style-loader",
+    "type": "client",
+    "dependencies": ["webpack"],
+    "development": true,
+    "details": {
+      "description": "style loader module for webpack",
+      "homepage": "https://github.com/webpack/style-loader#readme",
+      "latest": "0.18.2",
+      "license": "MIT",
+      "keywords": []
+    }
+  }, {
+    "name": "webpack",
+    "type": "client",
+    "dependencies": [],
+    "development": true,
+    "details": {
+      "description": "Packs CommonJs/AMD modules for the browser. Allows to split your codebase into multiple bundles, which can be loaded on demand. Support loaders to preprocess files, i.e. json, jsx, es7, css, less, ... and your custom stuff.",
+      "homepage": "https://github.com/webpack/webpack",
+      "latest": "2.6.1",
+      "license": "MIT",
+      "keywords": []
+    }
+  }, {
+    "name": "webpack-dev-server",
+    "type": "client",
+    "dependencies": ["webpack"],
+    "development": true,
+    "details": {
+      "description": "Serves a webpack app. Updates the browser on changes.",
+      "homepage": "http://github.com/webpack/webpack-dev-server",
+      "latest": "2.4.5",
+      "license": "MIT",
+      "keywords": []
+    }
+  }],
+  "last-updated": "2017-06-10T13:08:14+00:00"
+}

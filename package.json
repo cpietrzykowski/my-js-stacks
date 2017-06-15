@@ -1,0 +1,48 @@
+{
+  "name": "my-js-stacks",
+  "version": "0.0.0",
+  "description": "A tool for setting up a js project.",
+  "main": "index.js",
+  "author": "Christopher Pietrzykowski <cpietrzykowski@gmail.com>",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "devserver": "php -S 127.0.0.1:3000 -t ./public",
+    "app:dev": "webpack-dev-server --hot --inline --progress",
+    "app:build": "webpack -p --display-error-details"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "bootstrap": "4.0.0-alpha.6",
+    "css-loader": "^0.28.4",
+    "cssnano": "^3.10.0",
+    "eslint": "^3.19.0",
+    "eslint-config-google": "^0.8.0",
+    "eslint-plugin-flowtype": "^2.34.0",
+    "eslint-plugin-react": "^7.0.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "flow-bin": "^0.47.0",
+    "jest": "^20.0.4",
+    "jquery": "^3.2.1",
+    "jsdoc": "^3.4.3",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.5",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "sass-loader": "^6.0.5",
+    "style-loader": "^0.18.1",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+  }
+}

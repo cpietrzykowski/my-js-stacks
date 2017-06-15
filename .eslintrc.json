@@ -1,0 +1,39 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "extends": [
+    "eslint:recommended",
+    "plugin:flowtype/recommended",
+    "plugin:react/recommended",
+    "google"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [ "react", "flowtype" ],
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    }
+  },
+  "rules": {
+    "comma-dangle": ["error", "never"],
+    "indent": ["error",
+      2, {
+        "SwitchCase": 1
+      }
+    ],
+    "linebreak-style": ["error"],
+    "semi": ["error"],
+    "no-console": "warn"
+  }
+}
