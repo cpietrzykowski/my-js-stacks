@@ -9,13 +9,14 @@ export default class Package extends React.Component {
   };
 
   render() {
-    const {included} = this.props;
-    const pkg = this.props.package;
+    const {included, package: pkg} = this.props;
+    const {notes} = pkg;
     const {description, homepage, latest, license} = pkg.details;
     const wrapperClasses = [
       'list-group-item-action', 'list-group-item'
     ];
     included && wrapperClasses.push('active');
+
     return (
       <div className={wrapperClasses.join(' ')} onClick={this.props.onClick}>
         <div className="d-flex w-100 justify-content-between">
@@ -28,6 +29,12 @@ export default class Package extends React.Component {
         <div className="d-flex w-100 justify-content-between">
           <p>{description}</p>
         </div>
+
+        {(notes) &&
+          <div className="d-flex w-100 justify-content-between">
+            <p>{notes}</p>
+          </div>
+        }
 
         {(pkg.dependencies.length > 0) &&
           <div className="d-flex w-100">

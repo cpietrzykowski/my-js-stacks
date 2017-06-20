@@ -64,7 +64,7 @@ module.exports = {
     proxy: {
       '*': 'http://localhost:3000'
     },
-    contentBase: path.join(__dirname),
+    contentBase: path.resolve(__dirname, 'public'),
     compress: true,
     historyApiFallback: true,
     noInfo: true

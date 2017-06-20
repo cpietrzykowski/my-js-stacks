@@ -11,8 +11,40 @@ export default class Packages extends React.Component {
     value: PropTypes.arrayOf(PropTypes.object)
   };
 
+  collectPackageTypes() {
+    const {packages, types} = this.props;
+
+    // could be implemented with a Set memo
+    // first gather type info from packages
+    // then assign desccriptions to those present
+    return packages.reduce(function(memo, val) {
+      const entry = val.type;
+      if (memo.indexOf(entry) == (-1)) {
+        memo.push(entry);
+      }
+      return memo;
+    }, []).map(function(type) {
+      // always return an object -- even if not found in description
+      // collection
+      const defaultType = {name: type, description: ''};
+
+      const foundType = types.find(function(t) {
+        return type == t.name;
+      });
+
+      if (foundType) {
+        return foundType;
+      }
+
+      return defaultType;
+    }).sort(function(l, r) {
+      return l.name.localeCompare(r.name);
+    });
+  }
+
   render() {
-    const {packages, types, value} = this.props;
+    const {packages, value} = this.props;
+    const types = this.collectPackageTypes();
 
     return (
       <fieldset>
@@ -26,15 +58,13 @@ export default class Packages extends React.Component {
         }}>Select All</button>
 
         <div className="d-flex p-2 flex-column">
-          {types.sort(function(l, r) {
-            return l.name.localeCompare(r.name);
-          }).map((type, i) => {
+          {types.map((type, i) => {
             const pkgs = packages.filter(function(pkg) {
               return (type.name == pkg.type);
             });
 
             return (
-              <div key={i}>
+              <div key={i} className='package-type'>
                 <h3>{type.name}</h3>
                 <div>{type.description}</div>
 
